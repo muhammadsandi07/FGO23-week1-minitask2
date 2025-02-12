@@ -1,0 +1,21 @@
+
+PROGRAM GetDisCount
+
+DECLARE diskon, jumlahDiskon, hasil :number
+BEGIN 
+    INPUT(pembelian)
+    IF pembelian <= 0:
+        OUTPUT("pembelian harus di atas 0 rupiah")
+    ELSE:
+        IF pembelian >= 1.000.000 :
+            diskon = 10 : 100 
+        ELSE IF pembelian >= 500.000
+            diskon = 5 : 100
+        ELSE:
+            diskon = 0
+        END IF
+        jumlahDiskon = pembelian x diskon
+        hasil = pembelian - jumlahDiskon
+        OUTPUT(hasil, jumlahdiskon)
+    END IF
+END

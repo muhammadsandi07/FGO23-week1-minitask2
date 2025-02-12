@@ -1,0 +1,42 @@
+PROGRAM KONVERSI_SUHU
+
+DECLARE suhuAkhir
+BEGIN 
+    INPUT(SkalaAWAL)
+    INPUT(SuhuAwal)
+    INPUT(SkalaTujuan)
+
+    IF SkalaAWAL = "Celcius" :
+        IF SkalaTujuan = "Kelvin":
+            suhuAkhir = SuhuAwal + 273,15
+        ELSE IF SkalaTujuan = "Fahrenheit":
+            suhuAkhir = (SuhuAwal x 9 /5) +32
+        ELSE IF SkalaTujuan = "Reamur":
+            suhuAkhir = SuhuAwal x 4/5
+    ELSE IF SkalaAWAL = "Kelvin" :
+        IF SkalaTujuan = "Celcius":
+            suhuAkhir = SuhuAwal - 273,15
+        ELSE IF SkalaTujuan = "Fahrenheit":
+            suhuAkhir = (SuhuAwal x 9/5) - 459,67
+        ELSE IF SkalaTujuan = "Reamur":
+            suhuAkhir =( SuhuAwal - 273,15) x 4/5
+    ELSE IF SkalaAWAL = "Fahrenheit" :
+         IF SkalaTujuan = "Celcius":
+            suhuAkhir = (SuhuAwal - 32) x 5/9 
+         ELSE IF SkalaTujuan = "Kelvin":
+            suhuAkhir = (SuhuAwal + 459,67) x 5/9
+         ELSE IF SkalaTujuan = "Reamur":
+            suhuAkhir =( SuhuAwal - 32) x 4/9
+    ELSE IF SkalaAWAL = "Reamur" :
+         IF SkalaTujuan = "Celcius":
+            suhuAkhir = SuhuAwal x 5/4
+         ELSE IF SkalaTujuan = "Fahrenheit":
+            suhuAkhir = (SuhuAwal x 9 /4) +32
+         ELSE IF SkalaTujuan = "Kelvin":
+            suhuAkhir = SuhuAwal x 5/4 + 273
+    END IF
+    OUTPUT(SkalaAWAL, SuhuAwal, SkalaTujuan, suhuAkhir)
+END    
+       
+
+
